@@ -1,16 +1,28 @@
 ---
-
+import { Icon } from "astro-icon/components";
+import { redirectToDefaultLocale } from "astro:i18n";
+const employeeData = await fetch("https://raw.githubusercontent.com/snotbroder/frontend-design/main/resources/json/corevalues.json").then((res) => res.json());
+console.log(employeeData);
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <h1>Astro</h1>
+    <Icon name="sheet" />
+    <!-- {
+      employeeData.map((employee) => (
+        <div>
+          <h2>{employee.name}</h2>
+          <p>{employee.title}</p>
+        </div>
+      ))
+    } -->
+  </body>
 </html>
