@@ -1,28 +1,36 @@
 ---
 import { Icon } from "astro-icon/components";
-import { redirectToDefaultLocale } from "astro:i18n";
+import MainLayout from "../layouts/MainLayout.astro";
 const employeeData = await fetch("https://raw.githubusercontent.com/snotbroder/frontend-design/main/resources/json/corevalues.json").then((res) => res.json());
 console.log(employeeData);
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-    <Icon name="sheet" />
-    <!-- {
-      employeeData.map((employee) => (
-        <div>
-          <h2>{employee.name}</h2>
-          <p>{employee.title}</p>
-        </div>
-      ))
-    } -->
-  </body>
-</html>
+<MainLayout sitetitle="Home" />
+<h1>HEADING 1</h1>
+<h2>HEADING 2</h2>
+<h3>HEADING 3</h3>
+<h4>HEADING 4</h4>
+<h5>HEADING 5</h5>
+<h6>HEADING 6</h6>
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, quidem?</p>
+
+<ul>
+  <li>HEEEEEYYY</li>
+  <li>HEEJJJJJJ</li>
+</ul>
+<ol><li>HEEEEyy</li></ol>
+
+<style>
+  .iconwrapper {
+    width: 10%;
+  }
+  .content > * {
+    grid-column: content;
+  }
+  .feature {
+    grid-column: feature;
+  }
+  .full {
+    grid-column: full;
+  }
+</style>

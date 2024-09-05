@@ -1,0 +1,60 @@
+---
+import "../styles/reset.css";
+import "../styles/global.css";
+
+const { sitetitle } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{sitetitle}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+    <!-- {
+      employeeData.map((employee) => (
+        <div>
+          <h2>{employee.name}</h2>
+          <p>{employee.title}</p>
+        </div>
+      ))
+    } -->
+  </body>
+</html>
+
+<style>
+  main {
+    --gap: clamp(1rem, 6vw, 3rem);
+    --full: minmax(var(--gap), 1fr);
+    --content: min(65ch, 100% - var(--gap) * 2);
+    --feature: minmax(0, 7rem);
+
+    display: grid;
+
+    grid-template-columns:
+      [full-start] var(--full)
+      [feature-start] var(--feature)
+      [content-start] var(--content)
+      var(--feature) [feature-end]
+      var(--full) [full-end];
+  }
+  .content > * {
+    grid-column: content;
+  }
+  .feature {
+    grid-column: feature;
+  }
+  .full {
+    grid-column: full;
+  }
+</style>
