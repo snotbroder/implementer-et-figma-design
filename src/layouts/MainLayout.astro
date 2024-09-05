@@ -1,6 +1,8 @@
 ---
 import "../styles/reset.css";
 import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 
 const { sitetitle } = Astro.props;
 ---
@@ -18,9 +20,11 @@ const { sitetitle } = Astro.props;
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
   </head>
   <body>
+    <Header />
     <main>
       <slot />
     </main>
+    <Footer />
     <!-- {
       employeeData.map((employee) => (
         <div>
@@ -33,22 +37,45 @@ const { sitetitle } = Astro.props;
 </html>
 
 <style>
-  main {
-    --gap: clamp(1rem, 6vw, 3rem);
-    --full: minmax(var(--gap), 1fr);
-    --content: min(65ch, 100% - var(--gap) * 2);
-    --feature: minmax(0, 7rem);
-
+  body {
     display: grid;
+    --gap: clamp(1rem, 6vw, 3rem);
+    --full: minmax(1rem, 1fr);
+    --content: minmax(0.5rem, 65ch);
+    --feature: 0;
+    @media (min-width: 900px) {
+      --gap: clamp(1rem, 6vw, 3rem);
+      --full: minmax(1rem, 1fr);
+      --content: minmax(0.5rem, 65ch);
+      --feature: minmax(0, var(--gap));
+    }
 
     grid-template-columns:
       [full-start] var(--full)
       [feature-start] var(--feature)
-      [content-start] var(--content)
+      [content] var(--content)
       var(--feature) [feature-end]
       var(--full) [full-end];
   }
-  .content > * {
+
+  main {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: full;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+
+    .content {
+      grid-column: content;
+    }
+    .feature {
+      grid-column: feature;
+    }
+    .full {
+      grid-column: full;
+    }
+  }
+  /* .content > * {
     grid-column: content;
   }
   .feature {
@@ -56,5 +83,5 @@ const { sitetitle } = Astro.props;
   }
   .full {
     grid-column: full;
-  }
+  }*/
 </style>

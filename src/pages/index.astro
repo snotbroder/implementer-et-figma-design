@@ -5,32 +5,45 @@ const employeeData = await fetch("https://raw.githubusercontent.com/snotbroder/f
 console.log(employeeData);
 ---
 
-<MainLayout sitetitle="Home" />
-<h1>HEADING 1</h1>
-<h2>HEADING 2</h2>
-<h3>HEADING 3</h3>
-<h4>HEADING 4</h4>
-<h5>HEADING 5</h5>
-<h6>HEADING 6</h6>
-<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, quidem?</p>
+<MainLayout sitetitle="Home">
+  <div class="hero">
+    <img src="" alt="" />
+    <section class="herotext content grid1-1">
+      <h1>Adam Buschemia Business Consultant</h1>
+    </section>
+  </div>
+  <div class="full">
+    <h1>HEADING 1</h1>
+    <h2>HEADING 2</h2>
+    <h3>HEADING 3</h3>
+    <h4>HEADING 4</h4>
+    <h5>HEADING 5</h5>
+    <h6>HEADING 6</h6>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, quidem?</p>
+  </div>
+  <div class="feature">
+    <h1>HEADING 1</h1>
+    <h2>HEADING 2</h2>
+    <h3>HEADING 3</h3>
+    <h4>HEADING 4</h4>
+    <h5>HEADING 5</h5>
+    <h6>HEADING 6</h6>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, quidem?</p>
+  </div>
 
-<ul>
-  <li>HEEEEEYYY</li>
-  <li>HEEJJJJJJ</li>
-</ul>
-<ol><li>HEEEEyy</li></ol>
-
+  <div class="content">
+    <h1>HEADING 1</h1>
+    <h2>HEADING 2</h2>
+    <h3>HEADING 3</h3>
+    <h4>HEADING 4</h4>
+    <h5>HEADING 5</h5>
+    <h6>HEADING 6</h6>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, quidem?</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus ipsum molestias quibusdam ratione cupiditate consequuntur velit, reprehenderit, cumque totam eum obcaecati eligendi nesciunt modi voluptas rem at blanditiis, officiis explicabo. Laborum harum quisquam neque, sint, voluptates eveniet, sequi quaerat quidem quod vero modi et fugiat placeat! Aut consequuntur sint voluptatum?</p>
+  </div>
+</MainLayout>
 <style>
-  .iconwrapper {
-    width: 10%;
-  }
-  .content > * {
-    grid-column: content;
-  }
-  .feature {
-    grid-column: feature;
-  }
-  .full {
-    grid-column: full;
+  .hero:first-child {
+    grid-column:;
   }
 </style>

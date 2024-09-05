@@ -1,8 +1,8 @@
 :root {
   /* Typography sizes */
-  --step--2: clamp(0.6944rem, 0.6341rem + 0.3019vw, 0.8681rem);
-  --step--1: clamp(0.8333rem, 0.7609rem + 0.3623vw, 1.0417rem);
-  --step-0: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
+  --step--2: clamp(0.6944rem, 0.6341rem + 0.3019vw, 0.5681rem);
+  --step--1: clamp(0.8333rem, 0.7609rem + 0.3623vw, 0.8rem);
+  --step-0: clamp(1rem, 0.913rem + 0.4348vw, 1rem);
   --step-1: clamp(1.2rem, 1.0957rem + 0.5217vw, 1.5rem);
   --step-2: clamp(1.44rem, 1.3148rem + 0.6261vw, 1.8rem);
   --step-3: clamp(1.728rem, 1.5777rem + 0.7513vw, 2.16rem);
@@ -104,9 +104,25 @@
     color: var(--color-secondary-03);
     font-size: var(--step-0);
   }
+
+  /* Basic grids */
+  .grid1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid1-1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .grid1-1-1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
-/* .content > * {
+.content > * {
   grid-column: content;
 }
 .feature {
@@ -114,4 +130,4 @@
 }
 .full {
   grid-column: full;
-} */
+}

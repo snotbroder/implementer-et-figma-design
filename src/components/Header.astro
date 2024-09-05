@@ -1,0 +1,39 @@
+---
+import Btn2 from "./Btn2.astro";
+---
+
+<div class="menu">
+  <h4>AskExperts</h4>
+
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Case Study</a></li>
+    <li><a href="#">Team</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+
+  <Btn2 />
+</div>
+
+<style>
+  .menu {
+    grid-column: full;
+    display: flex;
+    justify-content: space-evenly;
+    background: var(--color-primary-03);
+    color: var(--color-secondary-01);
+    padding: 1rem;
+
+    h4 {
+      color: var(--color-secondary-02);
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+  }
+</style>
