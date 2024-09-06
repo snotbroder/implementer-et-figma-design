@@ -18,14 +18,19 @@ console.log(employeeData);
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, labore.</p>
     </article>
   </div>
-  <div class="full">
-    <h1>HEADING 1</h1>
-    <h2>HEADING 2</h2>
-    <h3>HEADING 3</h3>
-    <h4>HEADING 4</h4>
-    <h5>HEADING 5</h5>
-    <h6>HEADING 6</h6>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, quidem?</p>
+  <div class="content">
+    <div class="sect2-wrapper">
+
+      <div class="sect2-img">
+        <img src="/public/images/meeting.png" alt="people in meeting">
+      </div>
+      <div class="sect2-txt"><Tag color="" tagContent="WE'LL WORK WITH YOU" />
+      <h3>What To Expect</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quos exercitationem doloribus ipsa deserunt rem saepe fugiat error eius animi culpa, aperiam ipsum hic quo reprehenderit asperiores possimus! Molestiae debitis sequi expedita quibusdam aperiam! Voluptates sed aliquam architecto porro repudiandae!</p>
+    <ul><li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, est!</li><li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li></ul>
+      </div>
+    </div>
+
   </div>
   <div class="feature">
     <h1>HEADING 1</h1>
@@ -52,6 +57,60 @@ console.log(employeeData);
 </section>
 </MainLayout>
 <style>
+  .sect2-wrapper{
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap:  82px;
+
+    .sect2-img{
+      ::after {
+    content: '';
+    height: inherit;
+    aspect-ratio: 1;
+    border-radius: inherit;
+    background: #4EAF4E;
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform-origin: right top;
+  }
+      img{
+        border-radius: 30px;
+        position: relative;
+    
+      /* ::after{
+        width: 20%;
+        background-color: var(--color-primary-03);
+        content: '';
+        position: absolute;
+        top: -1rem;
+      } */
+    }}
+  
+
+    .sect2-txt{
+      ul{
+        list-style: none;
+      }
+      li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+  color: #595566;
+}
+
+li:before {
+  content: '';
+  width: 1.6rem;
+  aspect-ratio: 1;
+  background: var(--checkmark-icon) 50% 50% / contain no-repeat;
+}
+    }
+  }
+</style>
+<style>
   .hero {
     /* height: 30rem; */
     display: grid;
@@ -66,11 +125,11 @@ console.log(employeeData);
     height: 100%;
     > :first-child {
       background: var(--color-primary-03);
-      aspect-ratio: 1;
+      aspect-ratio: 1.5 / 1;
     }
     :nth-child(2) {
       object-fit: cover;
-      aspect-ratio: 1;
+      aspect-ratio: 1.5 / 1;
     }
   }
   .herotext {
