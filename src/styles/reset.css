@@ -41,7 +41,6 @@ dd {
 
 h1,
 h2,
-button,
 input,
 label {
   line-height: 1.1;
@@ -136,7 +135,6 @@ legend {
 }
 
 input,
-button,
 textarea,
 select {
   font: inherit;

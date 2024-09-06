@@ -1,5 +1,5 @@
 ---
-import Btn2 from "./Btn2.astro";
+import Btn from "./Btn.astro";
 ---
 
 <div class="menu">
@@ -12,7 +12,7 @@ import Btn2 from "./Btn2.astro";
     <li><a href="#">About</a></li>
   </ul>
 
-  <Btn2 />
+  <Btn popovertarget="popovertarget" type="btn2" content="LOGIN" />
 </div>
 
 <style>
@@ -34,6 +34,10 @@ import Btn2 from "./Btn2.astro";
       list-style: none;
       display: flex;
       gap: 2rem;
+    }
+    :nth-child(3) {
+      margin-top: auto;
+      margin-bottom: auto;
     }
   }
 </style>

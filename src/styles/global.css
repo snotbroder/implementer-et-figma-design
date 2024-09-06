@@ -120,14 +120,25 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-}
 
-.content > * {
-  grid-column: content;
-}
-.feature {
-  grid-column: feature;
-}
-.full {
-  grid-column: full;
+  /* Flow space */
+  > * + * {
+    margin-top: var(--flow-space, 0.5rlh);
+  }
+
+  h2 {
+    --flow-space: 1.5rlh;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 .feature {
+    --flow-space: 1.3rlh;
+  }
+
+  .feature + *,
+  figure + * {
+    --flow-space: 1lh;
+  }
 }

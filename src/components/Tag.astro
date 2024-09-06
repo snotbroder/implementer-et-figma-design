@@ -1,0 +1,30 @@
+---
+const { tagContent, color } = Astro.props;
+---
+
+<span class={color}>{tagContent}</span>
+
+<style>
+  span {
+    background: var(--color-primary-01);
+    color: var(--color-primary-03);
+    padding: var(--space-3xs) var(--space-xs);
+    border-radius: 50px;
+    font-size: var(--step-0);
+    font-weight: 400;
+    font-family: "Lato", sans-serif;
+  }
+
+  .green {
+    background: var(--color-primary-02);
+  }
+
+  .black {
+    background: var(--color-primary-03);
+    color: var(--color-secondary-02);
+  }
+
+  .fwxl {
+    font-weight: 600;
+  }
+</style>

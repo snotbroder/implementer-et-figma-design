@@ -1,16 +1,22 @@
 ---
 import { Icon } from "astro-icon/components";
 import MainLayout from "../layouts/MainLayout.astro";
+import Tag from "../components/Tag.astro";
+
 const employeeData = await fetch("https://raw.githubusercontent.com/snotbroder/frontend-design/main/resources/json/corevalues.json").then((res) => res.json());
 console.log(employeeData);
 ---
 
 <MainLayout sitetitle="Home">
-  <div class="hero">
-    <img src="" alt="" />
-    <section class="herotext content grid1-1">
-      <h1>Adam Buschemia Business Consultant</h1>
-    </section>
+  <div class="hero full ">
+    <div class="herobg full">
+      <div></div>
+      <img src="/public/images/sarah.png" alt="Sarah Jasmine, CEO" />
+    </div>
+    <article class="feature herotext">
+      <h1 >Adam Buschemia Business Consultant</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, labore.</p>
+    </article>
   </div>
   <div class="full">
     <h1>HEADING 1</h1>
@@ -31,7 +37,9 @@ console.log(employeeData);
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, quidem?</p>
   </div>
 
-  <div class="content">
+  <section  class="content">
+	<article >
+    <Tag color="" tagContent="this is a tag" />
     <h1>HEADING 1</h1>
     <h2>HEADING 2</h2>
     <h3>HEADING 3</h3>
@@ -40,10 +48,39 @@ console.log(employeeData);
     <h6>HEADING 6</h6>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, quidem?</p>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus ipsum molestias quibusdam ratione cupiditate consequuntur velit, reprehenderit, cumque totam eum obcaecati eligendi nesciunt modi voluptas rem at blanditiis, officiis explicabo. Laborum harum quisquam neque, sint, voluptates eveniet, sequi quaerat quidem quod vero modi et fugiat placeat! Aut consequuntur sint voluptatum?</p>
-  </div>
+  </article>
+</section>
 </MainLayout>
 <style>
-  .hero:first-child {
-    grid-column:;
+  .hero {
+    /* height: 30rem; */
+    display: grid;
   }
+  .herobg,
+  .herotext {
+    grid-area: 1/1;
+  }
+  .herobg {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    > :first-child {
+      background: var(--color-primary-03);
+      aspect-ratio: 1;
+    }
+    :nth-child(2) {
+      object-fit: cover;
+      aspect-ratio: 1;
+    }
+  }
+  .herotext {
+    display: subgrid;
+    grid-column: feature;
+
+    p,
+    h1 {
+      color: var(--color-secondary-02);
+    }
+
+
 </style>

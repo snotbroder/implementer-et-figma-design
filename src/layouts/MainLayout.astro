@@ -3,6 +3,7 @@ import "../styles/reset.css";
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import Popover from "../components/Popover.astro";
 
 const { sitetitle } = Astro.props;
 ---
@@ -21,6 +22,7 @@ const { sitetitle } = Astro.props;
   </head>
   <body>
     <Header />
+    <Popover />
     <main>
       <slot />
     </main>
@@ -43,6 +45,7 @@ const { sitetitle } = Astro.props;
     --full: minmax(1rem, 1fr);
     --content: minmax(0.5rem, 65ch);
     --feature: 0;
+
     @media (min-width: 900px) {
       --gap: clamp(1rem, 6vw, 3rem);
       --full: minmax(1rem, 1fr);
@@ -56,14 +59,29 @@ const { sitetitle } = Astro.props;
       [content] var(--content)
       var(--feature) [feature-end]
       var(--full) [full-end];
+    align-items: start;
+
+    /* .content {
+      grid: auto / subgrid;
+      grid-column: content;
+    } */
+
+    /* > *, * > .full {
+    grid-column: full;
+    display: inherit;
+    grid: auto / subgrid;
+
+    > :not(& .feature) {
+      grid-column: content;
+    } */
   }
 
   main {
     display: grid;
     grid-template-columns: subgrid;
     grid-column: full;
-    margin-top: 10rem;
-    margin-bottom: 10rem;
+    /* margin-top: 10rem;
+    margin-bottom: 10rem; */
 
     .content {
       grid-column: content;
