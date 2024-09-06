@@ -3,6 +3,7 @@ import { Icon } from "astro-icon/components";
 import MainLayout from "../layouts/MainLayout.astro";
 import Tag from "../components/Tag.astro";
 import ScrollingContainer from "../components/ScrollingContainer.astro";
+import { cardContent } from "../js/card-content.js";
 
 
 const employeeData = await fetch("https://raw.githubusercontent.com/snotbroder/frontend-design/main/resources/json/corevalues.json").then((res) => res.json());
@@ -34,8 +35,14 @@ console.log(employeeData);
     </div>
 
   </section>
-<section class="sect-3-wrapper">
-  <ScrollingContainer />
+<section class=" sect-3-wrapper">
+  <div class="sect-3txt">
+    <h2>Financial Projections</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+  <div class="sect-3cards full">
+  <ScrollingContainer cardContent={cardContent}/></div>
 </section>
   <div class="feature">
     <h1>HEADING 1</h1>
@@ -61,6 +68,26 @@ console.log(employeeData);
   </article>
 </section>
 </MainLayout>
+<style>
+    .sect-3-wrapper {
+      
+    /* grid-template-columns: 1fr minmax(0, var(--content-width)) 1fr; */
+    background: var(--color-secondary-01);
+    display: subgrid;
+    grid-column: full;
+
+    :first-child {
+
+      grid-column: 2;
+    }
+
+    :last-child {
+      > * {
+      }
+    }
+  }
+
+</style>
 <style>
   .sect2-wrapper{
     display: grid;

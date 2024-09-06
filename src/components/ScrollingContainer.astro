@@ -3,7 +3,7 @@ import "../styles/global.css";
 const { cardContent } = Astro.props;
 ---
 
-<ul class="full-width">
+<ul class="full">
   {
     cardContent.map((card) => (
       <li>
@@ -13,6 +13,7 @@ const { cardContent } = Astro.props;
     ))
   }
 </ul>
+<script src="/src/js/card-content.js"></script>
 
 <style>
   ul {
