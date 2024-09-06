@@ -1,0 +1,35 @@
+---
+import Tag from "./Tag.astro";
+
+const { tagContent, headline, img } = Astro.props;
+---
+
+<div class="head-wrapper full">
+  <div class="container">
+    <img src={img} alt="" />
+
+    <div class="txtcontainer">
+      <Tag tagContent={tagContent} />
+      <h1>{headline}</h1>
+    </div>
+  </div>
+</div>
+<style>
+  .txtcontainer {
+    background: var(--color-secondary-01-70);
+    padding: var(--space-l);
+    border-radius: 20px;
+    margin-left: var(--space-3xl);
+    :last-child {
+      margin-top: var(--space-s);
+    }
+  }
+  .container {
+    place-items: center left;
+    display: grid;
+  }
+  img,
+  .txtcontainer {
+    grid-area: 1/1;
+  }
+</style>
