@@ -1,0 +1,50 @@
+---
+import "../styles/global.css";
+const { cardContent } = Astro.props;
+---
+
+<ul class="full-width">
+  {
+    cardContent.map((card) => (
+      <li>
+        <h3>{card.title}</h3>
+        <p>{card.body}</p>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  ul {
+    list-style: none;
+    display: flex;
+    gap: var(--card-gap);
+    /* grid-column: full;*/
+    grid-column: 1 / -1;
+    overflow-x: scroll;
+    padding-inline: max(1rem, 50% - var(--content-width) / 2);
+  }
+
+  li {
+    background-color: var(--card-background);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    min-width: 30rem;
+    scroll-snap-align: center;
+
+    p {
+      color: var(--card-text-color);
+    }
+  }
+</style>
+
+<!--     
+
+    --content-width: 50rem;
+    --card-padding: 2.75rem 2.1875rem;
+    --card-gap: 1rem;
+    --card-border-radius: 8px;
+    --card-background: #ebebeb;
+    --card-text-color: #595566;
+    
+    -->

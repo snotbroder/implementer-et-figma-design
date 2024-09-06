@@ -1,0 +1,99 @@
+---
+import Btn from "./Btn.astro";
+---
+
+<div class="newsletter-wrapper">
+  <div class="newsletter">
+    <div class="text">
+      <h4>Subscribe to Our Newsletter</h4>
+      <p>Build stronger Customer Relationships with <strong>Consultalk</strong></p>
+    </div>
+    <div class="input-wrapper">
+      <input placeholder="Your email address" type="email" />
+
+      <Btn content="Subscribe" type="btn2" />
+    </div>
+  </div>
+</div>
+
+<style>
+  .newsletter-wrapper {
+    /* inline-size: min(600px, 100% - 1rem); */
+
+    block-size: 100%;
+    border-radius: 10px;
+    background: #181818;
+    overflow: clip;
+    position: relative;
+    isolation: isolate;
+
+    .newsletter {
+      display: flex;
+      gap: var(--space-2xl);
+
+      padding: 2rem;
+      h4,
+      p {
+        color: var(--color-secondary-02);
+      }
+    }
+
+    &::before {
+      --square-count: 12;
+      --square-size: 1rem;
+
+      --_square-size: var(--square-size, 1rem);
+      --_square-half: calc(var(--square-size) / 2);
+      --_square-sum: calc(var(--square-count) * var(--square-size));
+      z-index: -1;
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform-origin: 0 0;
+      inline-size: calc(round(var(--_square-sum), var(--_square-size)) - var(--_square-half));
+      aspect-ratio: 0.7;
+      background: linear-gradient(135deg, #be965d, #976f40, #c99b61, #f0be7b, #ffcb85, #eebc79, #c0935b, #976f40) 0 0 / 100% 100%;
+      mask:
+        var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
+        var(--square-pattern) var(--_square-half) var(--_square-half) / var(--_square-size) var(--_square-size);
+      /*clip-path: polygon(-3% 0%, 100% 0%, 100% 103%);*/
+      rotate: -45deg;
+    }
+
+    &::after {
+      content: "";
+      height: inherit;
+      aspect-ratio: 1;
+      border-radius: inherit;
+      background: #4eaf4e;
+      position: absolute;
+      top: 50%;
+      right: 2rem;
+      rotate: -45deg;
+      transform-origin: right top;
+      z-index: -1;
+    }
+  }
+
+  @container newsletter-size (width < 700px) {
+    .newsletter {
+      flex-direction: column;
+      gap: 0rem;
+      .input-wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .newsletter-wrapper {
+    container-type: inline-size;
+    container-name: newsletter-size;
+  }
+  .input-wrapper {
+    display: flex;
+    gap: var(--space-s);
+    justify-content: space-between;
+  }
+</style>
