@@ -44,20 +44,20 @@ const { sitetitle } = Astro.props;
     --gap: clamp(1rem, 6vw, 3rem);
     --full: minmax(1rem, 1fr);
     --content: minmax(0.5rem, 65ch);
-    --feature: 0;
+    --feature: 100%;
 
     @media (min-width: 900px) {
       --gap: clamp(1rem, 6vw, 3rem);
       --full: minmax(1rem, 1fr);
-      --content: minmax(0.5rem, 65ch);
-      --feature: minmax(0, var(--gap));
+      --content: minmax(0, var(--gap));
+      --feature: minmax(0.5rem, 65ch);
     }
 
     grid-template-columns:
       [full-start] var(--full)
-      [feature-start] var(--feature)
-      [content] var(--content)
-      var(--feature) [feature-end]
+      [content-start] var(--content)
+      [feature] var(--feature)
+      var(--content) [content-end]
       var(--full) [full-end];
     align-items: start;
 
