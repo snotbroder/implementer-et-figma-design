@@ -10,11 +10,12 @@ import MainLayout from "../layouts/MainLayout.astro";
     <h2>Meet Our Great Team</h2>
     <div class="lead">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, quis nostrud exercitation.</p>
-      <Btn type="btn1" content="He" />
+      <Btn type="btn1" content="Join our team" />
     </div>
     {
       employeeData.map((employee) => (
         <article class="employeecard">
+          <img src={employee.img} alt={employee.name} />
           <h2>{employee.name}</h2>
           <p>{employee.title}</p>
         </article>
@@ -27,6 +28,18 @@ import MainLayout from "../layouts/MainLayout.astro";
   .employeecard {
     h2 {
       color: red;
+    }
+  }
+
+  .lead {
+    display: flex;
+    gap: var(--space-2xl);
+    :nth-child(2) {
+      min-width: 10rem;
+    }
+
+    @media (width < 600px) {
+      flex-direction: column;
     }
   }
 </style>
