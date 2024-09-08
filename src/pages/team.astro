@@ -1,0 +1,32 @@
+---
+const employeeData = await fetch("https://raw.githubusercontent.com/snotbroder/frontend-design/main/resources/json/employees.json").then((res) => res.json());
+console.log(employeeData);
+import Btn from "../components/Btn.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout>
+  <section class="content">
+    <h2>Meet Our Great Team</h2>
+    <div class="lead">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, quis nostrud exercitation.</p>
+      <Btn type="btn1" content="He" />
+    </div>
+    {
+      employeeData.map((employee) => (
+        <article class="employeecard">
+          <h2>{employee.name}</h2>
+          <p>{employee.title}</p>
+        </article>
+      ))
+    }
+  </section>
+</MainLayout>
+
+<style>
+  .employeecard {
+    h2 {
+      color: red;
+    }
+  }
+</style>
