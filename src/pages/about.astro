@@ -19,7 +19,56 @@ MainLayout;
           <li>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.</li>
         </ul>
       </div>
-      <div class="imgcontainer"></div>
+      <div class="imgcontainer">
+        <img src="/public/images/teamwork.png" alt="" />
+      </div>
+    </div>
+    <div class="stats">
+      <ul>
+        <li>1128+</li>
+        <li>Succsessful Work</li>
+      </ul>
+      <ul>
+        <li>908+</li>
+        <li>Team members</li>
+      </ul>
+      <ul>
+        <li>258+</li>
+        <li>Happy Customers</li>
+      </ul>
+      <ul>
+        <li>564+</li>
+        <li>Creative Ideas</li>
+      </ul>
     </div>
   </section>
 </MainLayout>
+
+<style>
+  section {
+    img {
+      border-radius: 20px;
+    }
+  }
+  .stats {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    ul {
+      list-style: none;
+
+      li {
+        color: var(--color-primary-03);
+      }
+
+      :first-child {
+        font-size: var(--step-2);
+        font-weight: 700;
+      }
+      :last-child {
+        font-size: 18px;
+      }
+    }
+  }
+</style>
