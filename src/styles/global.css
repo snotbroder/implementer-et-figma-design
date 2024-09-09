@@ -20,6 +20,8 @@
   --space-2xl: clamp(4rem, 3.6522rem + 1.7391vw, 5rem);
   --space-3xl: clamp(6rem, 5.4783rem + 2.6087vw, 7.5rem);
 
+  --space-xlarge-s: clamp(18px, -27.913px + 14.3478vw, 150px);
+
   /* One-up pairs */
   /* --space-3xs-2xs: clamp(0.25rem, 0.1196rem + 0.6522vw, 0.625rem);
   --space-2xs-xs: clamp(0.5rem, 0.3478rem + 0.7609vw, 0.9375rem);
@@ -110,6 +112,11 @@
   .grid1-1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: var(--space-m);
+  }
+  .grid2-1 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     gap: var(--space-m);
   }
 

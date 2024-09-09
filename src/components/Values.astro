@@ -76,17 +76,16 @@ Btn;
     }
     .cards {
       display: grid;
-
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: var(--space-m);
-      @media (width > 1000px) {
-        grid-template-columns: repeat(4, 1fr);
-      }
 
       .card {
         display: grid;
         grid-row: span 4;
-        grid-template-rows: subgrid;
-        margin-top: auto;
+        grid-template-rows: auto;
+        gap: var(--space-xs);
+        margin-top: 0;
+        margin-bottom: auto;
 
         padding: var(--space-s);
         background-color: var(--color-secondary-02);
@@ -98,15 +97,17 @@ Btn;
         }
 
         .readmore {
-          display: grid;
-
-          width: 100%;
-          grid-row: 4;
           a {
             width: 100%;
+            text-decoration: none;
+            font-weight: 600;
+            min-width: 100%;
+            color: var(--color-primary-03);
+            transition: var(--hoverdefault);
           }
           :last-child {
             width: 1rem;
+            transition: var(--hoverdefault);
           }
         }
       }
@@ -116,8 +117,13 @@ Btn;
         transition: var(--hovertrans);
 
         .readmore {
+          a {
+            color: var(--color-primary-01);
+            transition: var(--hovertrans);
+          }
           :last-child {
             translate: 10% 0;
+            transition: var(--hovertrans);
           }
         }
       }

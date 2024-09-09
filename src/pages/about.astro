@@ -14,7 +14,7 @@ const employeeData = await fetch("https://raw.githubusercontent.com/snotbroder/f
     <Tag color="green" tagContent="OUR VISION" />
     <div class="grid1-1">
       <div class="txtcontent">
-        <h3>Turn your ideas i nto reality.</h3>
+        <h3>Turn your ideas into reality.</h3>
         <p>Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.</p>
         <ul class="check-list">
           <li>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day.</li>
@@ -48,6 +48,13 @@ const employeeData = await fetch("https://raw.githubusercontent.com/snotbroder/f
   <Values color="gray" />
 
   <section class="content">
+    <Tag tagContent="OUR TEAM" />
+    <div class="grid2-1">
+      <div>
+        <h2>We champion the bold to achieve the extraordinary</h2>
+        <p>Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team.</p>
+      </div>
+    </div>
     <article class="cardlist">
       {
         employeeData.slice(0, 3).map((employee) => (
@@ -70,8 +77,87 @@ const employeeData = await fetch("https://raw.githubusercontent.com/snotbroder/f
       }
     </article>
   </section>
-</MainLayout>
+  <section class="content">
+    <div class="accordionwrapper">
+      <Tag color="green" tagContent="FAQ" />
+      <h2>Customer Questions</h2>
+      <div class="accordion">
+        <details open class="detail" name="1">
+          <summary class="sum">What will happen when I’ve sent my application?</summary>
+          <p>Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team and individual achievements.</p>
+        </details>
 
+        <details class="detail" name="1">
+          <summary>Can I get a free trial before I purchase?</summary>
+          <p>Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team and individual achievements.</p>
+        </details>
+
+        <details class="detail" name="1">
+          <summary>What should I include in my personal statement?</summary>
+          <p>Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team and individual achievements.</p>
+        </details>
+
+        <details class="detail" name="1">
+          <summary>Will membership plans be charged automatically?</summary>
+          <p>Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team and individual achievements.</p>
+        </details>
+
+        <details class="detail" name="1">
+          <summary>What will happen when I’ve sent my application?</summary>
+          <p>Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team and individual achievements.</p>
+        </details>
+
+        <details class="detail" name="1">
+          <summary>Can I get a free trial before I purchase?</summary>
+          <p>Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team and individual achievements.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+<style>
+  .accordionwrapper {
+    background-color: var(--color-secondary-01);
+    padding: var(--space-xlarge-s);
+    text-align: center;
+    border-radius: 30px;
+
+    details {
+      text-align: left;
+      list-style: none;
+      position: relative;
+      transition: var(--hoverdefault);
+      border-bottom: 0.5px var(--color-secondary-03) solid;
+      padding: var(--space-m);
+      padding-left: 0;
+    }
+    summary {
+      list-style: none;
+      font-weight: 600;
+      font-family: "Cabin";
+      &::after {
+        content: "";
+        background-color: var(--color-primary-03);
+        width: 1rem;
+        height: 0.1rem;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transition: var(--hoverdefault);
+      }
+    }
+    details[open].detail > summary::after {
+      transform: rotate(-90deg);
+      transition: var(--hovertrans);
+      top: 20%;
+    }
+    details[open].detail {
+      /* translate: 0 10%; */
+      transition: var(--hovertrans);
+      opacity: 1;
+    }
+  }
+</style>
 <style>
   section {
     img {
