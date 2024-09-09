@@ -1,6 +1,7 @@
 ---
 const employeeData = await fetch("https://raw.githubusercontent.com/snotbroder/frontend-design/main/resources/json/employees.json").then((res) => res.json());
 console.log(employeeData);
+import { Icon } from "astro-icon/components";
 import Btn from "../components/Btn.astro";
 import Tag from "../components/Tag.astro";
 import MainLayout from "../layouts/MainLayout.astro";
@@ -23,6 +24,11 @@ import MainLayout from "../layouts/MainLayout.astro";
             </div>
             <h5>{employee.name}</h5>
             <p>{employee.description}</p>
+            <div class="socials">
+              <Icon name="instagram" />
+              <Icon name="facebook" />
+              <Icon name="twitter" />
+            </div>
           </article>
         ))
       }
@@ -51,6 +57,22 @@ import MainLayout from "../layouts/MainLayout.astro";
     .tag {
       place-self: end;
       margin: var(--space-s);
+    }
+    h5,
+    p {
+      margin-top: var(--space-s);
+    }
+    .socials {
+      display: flex;
+
+      justify-content: center;
+      gap: var(--space-s);
+
+      margin-top: var(--space-s);
+      > * {
+        height: var(--step-1);
+        width: var(--step-1);
+      }
     }
   }
 
