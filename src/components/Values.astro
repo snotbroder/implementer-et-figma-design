@@ -1,0 +1,122 @@
+---
+import { Icon } from "astro-icon/components";
+import Btn from "./Btn.astro";
+import Tag from "./Tag.astro";
+
+const { color } = Astro.props;
+Btn;
+---
+
+<section class={color}>
+  <div class="content">
+    <Tag tagContent="GROWING WITH OUR CLIENTS" />
+    <h2>Our core values & principles</h2>
+    <div class="lead">
+      <p>Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.</p>
+      <Btn type="btn1" content="Get in touch" />
+    </div>
+    <div class="cards content">
+      <article class="card">
+        <Icon name="database" />
+        <h6>Creative Ideas</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget accumsan augue Donec aliquam.</p>
+        <div class="readmore"><a href="">Read More <Icon name="arrowRight" /></a></div>
+      </article>
+
+      <article class="card">
+        <Icon name="data" />
+        <h6>Best Features</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="readmore"><a href="">Read More <Icon name="arrowRight" /></a></div>
+      </article>
+
+      <article class="card">
+        <Icon name="globe" />
+        <h6>Experience</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget accumsan augue Donec aliquam.</p>
+        <div class="readmore"><a href="">Read More <Icon name="arrowRight" /></a></div>
+      </article>
+
+      <article class="card">
+        <Icon name="cogwheel" />
+        <h6>Easy Solutions</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="readmore"><a href="">Read More <Icon name="arrowRight" /></a></div>
+      </article>
+    </div>
+  </div>
+</section>
+<style>
+  section {
+    display: grid;
+    grid-template-columns: subgrid;
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+    grid-column: full;
+
+    .lead {
+      display: flex;
+      gap: var(--space-2xl);
+
+      :nth-child(2) {
+        min-width: 10rem;
+      }
+
+      @media (width < 600px) {
+        flex-direction: column;
+      }
+    }
+    .cards {
+      display: grid;
+
+      gap: var(--space-m);
+      @media (width > 1000px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .card {
+        display: grid;
+        grid-row: span 4;
+        grid-template-rows: subgrid;
+        margin-top: auto;
+
+        padding: var(--space-s);
+        background-color: var(--color-secondary-02);
+        border-radius: 10px;
+        transition: var(--hoverdefault);
+
+        :first-child {
+          width: 3rem;
+        }
+
+        .readmore {
+          display: grid;
+
+          width: 100%;
+          grid-row: 4;
+          a {
+            width: 100%;
+          }
+          :last-child {
+            width: 1rem;
+          }
+        }
+      }
+      .card:hover {
+        cursor: pointer;
+        translate: var(--hover);
+        transition: var(--hovertrans);
+
+        .readmore {
+          :last-child {
+            translate: 10% 0;
+          }
+        }
+      }
+    }
+  }
+
+  .gray {
+    background: var(--color-secondary-01);
+  }
+</style>

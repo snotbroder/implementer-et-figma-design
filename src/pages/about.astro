@@ -2,8 +2,7 @@
 import HeadComponent from "../components/HeadComponent.astro";
 import Tag from "../components/Tag.astro";
 import MainLayout from "../layouts/MainLayout.astro";
-Tag;
-MainLayout;
+import Values from "../components/Values.astro";
 ---
 
 <MainLayout>
@@ -42,6 +41,8 @@ MainLayout;
       </ul>
     </div>
   </section>
+
+  <Values color="gray" />
 </MainLayout>
 
 <style>
