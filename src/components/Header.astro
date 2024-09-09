@@ -6,10 +6,10 @@ import Btn from "./Btn.astro";
   <a href="index.html"><h4>AskExperts</h4></a>
 
   <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Case Study</a></li>
-    <li><a href="#">Team</a></li>
-    <li><a href="#">About</a></li>
+    <li><a href="/index">Home</a></li>
+    <li><a href="/case">Case Study</a></li>
+    <li><a href="/team">Team</a></li>
+    <li><a href="/about">About</a></li>
   </ul>
 
   <Btn popovertarget="popovertarget" type="btn2" content="LOGIN" />
@@ -24,10 +24,12 @@ import Btn from "./Btn.astro";
     color: var(--color-secondary-01);
     padding: 1rem;
 
-    h4 {
-      color: var(--color-secondary-02);
+    a {
       margin-top: auto;
       margin-bottom: auto;
+      h4 {
+        color: var(--color-secondary-02);
+      }
     }
 
     ul {
@@ -42,8 +44,10 @@ import Btn from "./Btn.astro";
     a {
       color: var(--color-secondary-02);
       text-decoration: none;
+      transition: var(--hoverdefault);
       &:hover {
         color: var(--color-primary-01);
+        transition: var(--hovertrans);
       }
     }
     @media (width < 600px) {

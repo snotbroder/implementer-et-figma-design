@@ -14,10 +14,12 @@ const { type, content, event, popovertarget } = Astro.props;
     color: var(--color-primary-03);
     font-size: var(--step-0);
     font-family: "Lato", sans-serif;
+    transition: var(--hoverdefault);
     &:hover {
       border: var(--color-primary-03) 2px solid;
       background: var(--color-primary-03);
       color: var(--color-secondary-02);
+      transition: var(--hovertrans);
     }
   }
   .btn1 {
@@ -29,9 +31,11 @@ const { type, content, event, popovertarget } = Astro.props;
     color: var(--color-secondary-01);
     font-size: var(--step-0);
     font-family: "Lato", sans-serif;
+    transition: var(--hoverdefault);
     &:hover {
       background: transparent;
       color: var(--color-primary-03);
+      transition: var(--hovertrans);
     }
   }
 </style>
