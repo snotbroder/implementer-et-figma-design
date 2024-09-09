@@ -5,9 +5,11 @@ import { Icon } from "astro-icon/components";
 import Btn from "../components/Btn.astro";
 import Tag from "../components/Tag.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import HeadComponent from "../components/HeadComponent.astro";
 ---
 
 <MainLayout sitetitle="Our team">
+  <HeadComponent tagContent="TEAM" headline="The Consultors" img="/public/images/consultors.png" />
   <section class="content">
     <h2>Meet Our Great Team</h2>
     <div class="lead">
