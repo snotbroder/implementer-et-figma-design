@@ -3,6 +3,9 @@ import HeadComponent from "../components/HeadComponent.astro";
 import Tag from "../components/Tag.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import Values from "../components/Values.astro";
+import { Icon } from "astro-icon/components";
+
+const employeeData = await fetch("https://raw.githubusercontent.com/snotbroder/frontend-design/main/resources/json/employees.json").then((res) => res.json());
 ---
 
 <MainLayout>
@@ -11,7 +14,7 @@ import Values from "../components/Values.astro";
     <Tag color="green" tagContent="OUR VISION" />
     <div class="grid1-1">
       <div class="txtcontent">
-        <h3>Turn your ideas into reality.</h3>
+        <h3>Turn your ideas i nto reality.</h3>
         <p>Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.</p>
         <ul class="check-list">
           <li>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day.</li>
@@ -43,6 +46,30 @@ import Values from "../components/Values.astro";
   </section>
 
   <Values color="gray" />
+
+  <section class="content">
+    <article class="cardlist">
+      {
+        employeeData.slice(0, 3).map((employee) => (
+          <article class="employeecard">
+            <img src={employee.img} alt="" />
+            <div class="tag">
+              <Tag color="black" tagContent={employee.title}>
+                {" "}
+              </Tag>
+            </div>
+            <h5>{employee.name}</h5>
+            <p>{employee.description}</p>
+            <div class="socials">
+              <Icon name="instagram" />
+              <Icon name="facebook" />
+              <Icon name="twitter" />
+            </div>
+          </article>
+        ))
+      }
+    </article>
+  </section>
 </MainLayout>
 
 <style>
@@ -71,5 +98,52 @@ import Values from "../components/Values.astro";
         font-size: 18px;
       }
     }
+  }
+</style>
+
+<style>
+  .cardlist {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--space-m);
+  }
+  .employeecard {
+    display: grid;
+    text-align: center;
+    transition: var(--hoverdefault);
+    img {
+      aspect-ratio: 1 / 1.15;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+    img,
+    .tag {
+      grid-area: 1/1;
+    }
+    .tag {
+      place-self: end;
+      margin: var(--space-s);
+    }
+    h5,
+    p {
+      margin-top: var(--space-s);
+    }
+    .socials {
+      display: flex;
+
+      justify-content: center;
+      gap: var(--space-s);
+
+      margin-top: var(--space-s);
+      > * {
+        height: var(--step-1);
+        width: var(--step-1);
+      }
+    }
+  }
+  .employeecard:hover {
+    cursor: pointer;
+    translate: var(--hover);
+    transition: var(--hovertrans);
   }
 </style>
