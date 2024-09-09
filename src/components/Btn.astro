@@ -7,7 +7,7 @@ const { type, content, event, popovertarget } = Astro.props;
 <style>
   .btn2 {
     border-radius: 50px;
-    padding: var(--space-3xs) var(--space-xs);
+    padding: var(--space-xs);
     height: fit-content;
     border: var(--color-primary-01) 2px solid;
     background: var(--color-primary-01);
@@ -24,7 +24,7 @@ const { type, content, event, popovertarget } = Astro.props;
   }
   .btn1 {
     border-radius: 50px;
-    padding: var(--space-3xs) var(--space-xs);
+    padding: var(--space-xs);
     height: fit-content;
     border: var(--color-primary-03) 2px solid;
     background: var(--color-primary-03);
@@ -35,6 +35,23 @@ const { type, content, event, popovertarget } = Astro.props;
     &:hover {
       background: transparent;
       color: var(--color-primary-03);
+      transition: var(--hovertrans);
+    }
+  }
+
+  .btn3 {
+    border-radius: 50px;
+    padding: var(--space-xs);
+    height: fit-content;
+    border: var(--color-secondary-02) 2px solid;
+    background: var(--color-secondary-02);
+    color: var(--color-primary-03);
+    font-size: var(--step-0);
+    font-family: "Lato", sans-serif;
+    transition: var(--hoverdefault);
+    &:hover {
+      background: transparent;
+      color: var(--color-secondary-02);
       transition: var(--hovertrans);
     }
   }

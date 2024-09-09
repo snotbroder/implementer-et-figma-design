@@ -13,7 +13,14 @@ Btn;
     <h2>Our core values & principles</h2>
     <div class="lead">
       <p>Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.</p>
-      <Btn type="btn1" content="Get in touch" />
+      <div class="buttons">
+        <div class="blackbtn">
+          <Btn type="btn1" content="Get in touch" />
+        </div>
+        <div class="whitebtn">
+          <Btn type="btn3" content="Get in touch" />
+        </div>
+      </div>
     </div>
     <div class="cards content">
       <article class="card">
@@ -55,11 +62,12 @@ Btn;
     grid-column: full;
 
     .lead {
-      display: flex;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
       gap: var(--space-2xl);
 
       :nth-child(2) {
-        min-width: 10rem;
+        place-self: center end;
       }
 
       @media (width < 600px) {
@@ -118,5 +126,34 @@ Btn;
 
   .gray {
     background: var(--color-secondary-01);
+
+    .whitebtn {
+      display: none;
+    }
+    .blackbtn {
+      display: inline;
+    }
+  }
+
+  .black {
+    background: var(--color-primary-03);
+
+    h2,
+    p {
+      color: var(--color-secondary-02);
+    }
+
+    .whitebtn {
+      display: inline;
+    }
+    .blackbtn {
+      display: none;
+    }
+    .card {
+      h2,
+      p {
+        color: var(--color-primary-03);
+      }
+    }
   }
 </style>
