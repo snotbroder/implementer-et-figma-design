@@ -180,4 +180,27 @@ body {
   h4 {
     line-height: 1.25;
   }
+
+  /* CHecklist */
+  .check-list {
+    padding-left: 0rem;
+    ul {
+      list-style: none;
+    }
+    li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1rem;
+      color: #595566;
+    }
+
+    li:before {
+      content: "";
+      width: 1.6rem;
+      aspect-ratio: 1;
+      background: var(--checkmark-icon) 50% 50% / contain no-repeat;
+    }
+  }
 }
