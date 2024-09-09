@@ -2,32 +2,55 @@
 const employeeData = await fetch("https://raw.githubusercontent.com/snotbroder/frontend-design/main/resources/json/employees.json").then((res) => res.json());
 console.log(employeeData);
 import Btn from "../components/Btn.astro";
+import Tag from "../components/Tag.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<MainLayout>
+<MainLayout sitetitle="Our team">
   <section class="content">
     <h2>Meet Our Great Team</h2>
     <div class="lead">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, quis nostrud exercitation.</p>
       <Btn type="btn1" content="Join our team" />
     </div>
-    {
-      employeeData.map((employee) => (
-        <article class="employeecard">
-          <img src={employee.img} alt={employee.name} />
-          <h2>{employee.name}</h2>
-          <p>{employee.title}</p>
-        </article>
-      ))
-    }
+    <section class="cardlist">
+      {
+        employeeData.map((employee) => (
+          <article class="employeecard">
+            <img src={employee.img} alt="" />
+            <div class="tag">
+              <Tag tagContent={employee.title}> </Tag>
+            </div>
+            <h5>{employee.name}</h5>
+            <p>{employee.description}</p>
+          </article>
+        ))
+      }
+    </section>
   </section>
 </MainLayout>
 
 <style>
+  .cardlist {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--space-m);
+  }
   .employeecard {
-    h2 {
-      color: red;
+    display: grid;
+    text-align: center;
+    img {
+      aspect-ratio: 1 / 1.15;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+    img,
+    .tag {
+      grid-area: 1/1;
+    }
+    .tag {
+      place-self: end;
+      margin: var(--space-s);
     }
   }
 
