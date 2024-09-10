@@ -8,6 +8,7 @@ import Values from "../components/Values.astro";
 
 import PiechartContainer from "../components/PiechartContainer.astro";
 import PieChart from "../components/PieChart.astro";
+import Btn from "../components/Btn.astro";
 
 
 
@@ -25,6 +26,64 @@ import PieChart from "../components/PieChart.astro";
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, labore.</p>
     </article>
   </div>
+  <section class="sect-1 content">
+<article class="darkcard">
+  <h5>Finance & Restructuring</h5>
+<p>Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.</p>
+<Btn type="btn1" content="Our services"></Btn> 
+</article>
+
+<article class="darkcard">
+  <h5>Our Approach</h5>
+<p>Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.</p>
+<Btn type="btn1" content="More About"></Btn> 
+</article>
+
+<article class="darkcard">
+  <h5>Consultalk Result</h5>
+<p>Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.</p>
+<Btn type="btn1" content="Explore Our Solution"></Btn> 
+</article>
+  </section>
+
+  <style>
+.sect-1{
+  display: flex;
+
+  gap: var(--space-xs);
+  padding: 0;
+  margin-top: -7rem;
+ 
+  article{ 
+    margin-top: 0;
+    padding: var(--space-m);
+     border-radius: 20px;
+    background:rgba(38, 38, 38, 0.90); ;
+    border: var(--color-secondary-03) solid 1px;
+    backdrop-filter: blur(16px);
+    h5,p{
+   color: var(--color-secondary-02);   
+   margin-bottom: var(--space-2xs);
+    }
+    :last-child{
+      margin-top: var(--space-2xs);
+    }
+    
+  }
+
+  @media screen and (max-width: 700px) {
+    margin-top: var(--space-m);
+    flex-direction: column;
+
+    article{
+      width: 25rem;
+      margin: auto;
+    }
+  }
+}
+  </style>
+
+
   <section class="content">
     <div class="sect2-wrapper grid1-1">
 
