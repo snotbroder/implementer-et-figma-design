@@ -51,7 +51,7 @@ import PieChart from "../components/PieChart.astro";
     </div>
   <div class="buttons">
     <div class="button"><Icon name="arrowRound"></Icon></div>
-    <div class="button"><Icon name="arrowRight"></Icon></div>
+    <div class="button"><Icon name="arrowRound"></Icon></div>
   </div>
 </div>
 </div>
@@ -122,8 +122,18 @@ import PieChart from "../components/PieChart.astro";
     } 
     .buttons{
       display: flex;
+      gap: var(--space-2xs);
+      :nth-child(2){
+        /* rotate: 180deg; */
+      }
       
-  
+  > *{
+    width: 3rem;
+    transition: var(--hoverdefault);
+    &:hover{
+      transition: var(--hovertrans);
+      filter: invert(87%) sepia(85%) saturate(5315%) hue-rotate(318deg) brightness(101%) contrast(101%);
+  }
     }
  
   }
