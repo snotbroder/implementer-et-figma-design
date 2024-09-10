@@ -42,16 +42,16 @@ import PieChart from "../components/PieChart.astro";
     </div>
 
   </section>
-<section class=" sect-3-wrapper">
+<section class="sect-3-wrapper">
   <div class="sect-3txt">
     <h2>Financial Projections</h2>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
+  </div>
 
 
   <ScrollingContainer cardContent={cardContent}/>
 
-
+</section>
 <PiechartContainer>
 <PieChart percent="85" headline="Consistency"> </PieChart>
 <PieChart percent="95" headline="Improvement"> </PieChart>
@@ -98,6 +98,16 @@ import PieChart from "../components/PieChart.astro";
   </article>
 </section>
 </MainLayout>
+<style>
+  .sect-3-wrapper{
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: full;
+    .sect-3txt{
+      grid-column: content;
+    }
+  }
+</style>
 <style>
   .sect-5{
     grid-column: content;

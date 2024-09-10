@@ -2,6 +2,7 @@ export const cardContent = [
   {
     title: "The Balance Sheet",
     body: "The Balance Sheet is a summary of the assets and liabilities and equity of a business at a specific point of time.",
+    icon: "/implementer-et-figma-design/src/icons/sheet.svg",
   },
   {
     title: "Income Statement",

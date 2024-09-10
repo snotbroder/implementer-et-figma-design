@@ -40,6 +40,7 @@
   --color-secondary-01-70: #f5f5f5c3;
   --color-secondary-02: #ffffff;
   --color-secondary-03: #595566;
+  --color-secondary-04: #ebebeb;
 
   h1 {
     color: var(--color-primary-03);
