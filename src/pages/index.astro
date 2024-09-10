@@ -42,13 +42,19 @@ import PieChart from "../components/PieChart.astro";
     </div>
 
   </section>
-<section class="sect-3-wrapper">
-  <div class="sect-3txt">
+<section class="sect-3-wrapper ">
+<div class="sect-3-content ">
+    <div class="sect-3txt ">
+    <Icon name="financialProjections"></Icon>
     <h2>Financial Projections</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  <div class="buttons">
+    <div class="button"><Icon name="arrowRound"></Icon></div>
+    <div class="button"><Icon name="arrowRight"></Icon></div>
   </div>
-
-
+</div>
+</div>
   <ScrollingContainer cardContent={cardContent}/>
 
 </section>
@@ -103,9 +109,23 @@ import PieChart from "../components/PieChart.astro";
     display: grid;
     grid-template-columns: subgrid;
     grid-column: full;
-    .sect-3txt{
+    .sect-3-content{
       grid-column: content;
+        .sect-3txt{
+          *{
+            margin-bottom: var(--space-2xs);
+          }
+
+     :first-child{
+      width: 5rem;
+     }
+    } 
+    .buttons{
+      display: flex;
+      
+  
     }
+ 
   }
 </style>
 <style>
