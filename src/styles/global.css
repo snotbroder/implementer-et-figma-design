@@ -119,6 +119,11 @@
     grid-template-columns: 2fr 1fr;
     gap: var(--space-m);
   }
+  .grid1-2 {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: var(--space-m);
+  }
 
   .grid1-1-1 {
     display: grid;
