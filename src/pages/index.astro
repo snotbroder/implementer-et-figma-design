@@ -28,15 +28,15 @@ import PieChart from "../components/PieChart.astro";
   <section class="content">
     <div class="sect2-wrapper grid1-1">
 
-      <div class="sect2-img">
+      <figure class="sect2-img">
         <img src="/public/images/meeting.png" alt="people in meeting">
-      </div>
+      </figure>
       <div class="sect2-txt"><Tag color="" tagContent="WE'LL WORK WITH YOU" />
       <h3>What To Expect</h3>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quos exercitationem doloribus ipsa deserunt rem saepe fugiat error eius animi culpa, aperiam ipsum hic quo reprehenderit asperiores possimus! Molestiae debitis sequi expedita quibusdam aperiam! Voluptates sed aliquam architecto porro repudiandae!</p>
     <ul class="check-list">
-      <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, est!</li>
-      <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+      <li>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day.</li>
+      <li>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.</li>
     </ul>
       </div>
     </div>
@@ -214,30 +214,53 @@ import PieChart from "../components/PieChart.astro";
     grid-template-columns: 3fr 2fr; */
  
 
-    .sect2-img{
-      ::after {
-    content: '';
-    height: inherit;
-    aspect-ratio: 1;
-    border-radius: inherit;
-    background: #4EAF4E;
-    position: absolute;
-    top: 50%;
-    right: 2rem;
-    transform-origin: right top;
+    figure {
+  position: relative;
+  display: grid;
+  img{
+    border-radius: 30px;
+  
+   place-self: end;
+    width: 30rem;
   }
-      img{
-        border-radius: 30px;
-        position: relative;
+  
+  /* prikker */
+  &::before {
+    --square-count: 12;
+    --square-size: 1.34rem;
     
-      /* ::after{
-        width: 20%;
-        background-color: var(--color-primary-03);
-        content: '';
-        position: absolute;
-        top: -1rem;
-      } */
-    }}
+    --_square-size: var(--square-size, 1rem);
+    --_square-half: calc(var(--square-size) / 2);
+    --_square-sum: calc(var(--square-count) * var(--square-size));
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10%;
+    /* inset: 0 2rem auto auto; */
+ 
+    inline-size: calc( round( var(--_square-sum), var(--_square-size) ) - var(--_square-half) );
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #BE965D, #976F40, #C99B61, #F0BE7B , #FFCB85, #EEBC79, #C0935B, #976F40) 0 0 / 100% 100%;
+    mask:
+      var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
+      var(--square-pattern) var(--_square-half) var(--_square-half) / var(--_square-size) var(--_square-size);
+
+  }
+ 
+  /* grøn boks */
+  &::after {
+    content: '';
+    position: absolute;
+    left: -5%;
+    top: 12%;
+    background: var(--color-primary-02);
+    width: 150px;
+    height: 120px;
+    border-radius: 20px;
+    z-index: -1;
+  }
+}
   
 
 
