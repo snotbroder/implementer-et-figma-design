@@ -19,7 +19,7 @@ import HeadComponent from "../components/HeadComponent.astro";
     <article class="cardlist">
       {
         employeeData.map((employee) => (
-          <article class="employeecard">
+          <a href={`/team/${employee.slug}`} class="employeecard">
             <img src={employee.img} alt="" />
             <div class="tag">
               <Tag tagContent={employee.title}> </Tag>
@@ -31,7 +31,7 @@ import HeadComponent from "../components/HeadComponent.astro";
               <Icon name="facebook" />
               <Icon name="twitter" />
             </div>
-          </article>
+          </a>
         ))
       }
     </article>

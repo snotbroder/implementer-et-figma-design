@@ -1,0 +1,34 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+
+MainLayout;
+export async function getStaticPaths() {
+  const employeeData = await fetch("https://raw.githubusercontent.com/snotbroder/frontend-design/main/resources/json/employees.json").then((res) => res.json());
+
+  return employeeData.map((employee) => {
+    return {
+      params: { slug: employee.slug },
+      props: { myData: employee },
+    };
+  });
+}
+const { myData } = Astro.props;
+console.log(myData);
+---
+
+<MainLayout sitetitle={myData.name}>
+  <section class="content">
+    <article class="grid1-2">
+      <div class="imgcontainer">
+        <img src={myData.img} alt="" />
+      </div>
+      <div class="txtcontainer flow">
+        <div class="lead">
+          <h4>{myData.name}</h4>
+          <p>{myData.title}</p>
+        </div>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui. Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do.</p>
+      </div>
+    </article>
+  </section>
+</MainLayout>
