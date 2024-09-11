@@ -10,7 +10,7 @@ import HeadComponent from "../components/HeadComponent.astro";
 
 <MainLayout sitetitle="Our team">
   <HeadComponent tagContent="TEAM" headline="The Consultors" img="/public/images/consultors.png" />
-  <section class="content">
+  <section class="content flow-light">
     <h2>Meet Our Great Team</h2>
     <div class="lead">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, quis nostrud exercitation.</p>
@@ -86,6 +86,7 @@ import HeadComponent from "../components/HeadComponent.astro";
   .lead {
     display: flex;
     gap: var(--space-2xl);
+    align-items: center;
     :nth-child(2) {
       min-width: 10rem;
     }
