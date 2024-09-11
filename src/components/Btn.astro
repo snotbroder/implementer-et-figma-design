@@ -1,8 +1,8 @@
 ---
-const { type, content, event, popovertarget } = Astro.props;
+const { type, content, link } = Astro.props;
 ---
 
-<button popovertarget={popovertarget} onclick={event} class={type}> {content} </button>
+<a href={link} class={type}> {content} </a>
 
 <style>
   .btn2 {

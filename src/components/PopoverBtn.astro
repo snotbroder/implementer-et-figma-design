@@ -1,0 +1,25 @@
+---
+const { popovertarget } = Astro.props;
+---
+
+<button popovertarget={popovertarget}>Login</button>
+
+<style>
+  button {
+    border-radius: 50px;
+    padding: var(--space-2xs) var(--space-s);
+    height: fit-content;
+    border: var(--color-primary-01) 2px solid;
+    background: var(--color-primary-01);
+    color: var(--color-primary-03);
+    font-size: var(--step-0);
+    font-family: "Lato", sans-serif;
+    transition: var(--hoverdefault);
+    &:hover {
+      border: var(--color-primary-01) 2px solid;
+      background: var(--color-primary-04);
+      color: var(--color-secondary-02);
+      transition: var(--hovertrans);
+    }
+  }
+</style>

@@ -1,5 +1,6 @@
 ---
 import Btn from "./Btn.astro";
+import PopoverBtn from "./PopoverBtn.astro";
 ---
 
 <div class="menu">
@@ -12,7 +13,7 @@ import Btn from "./Btn.astro";
     <li><a href="/about">About</a></li>
   </ul>
 
-  <Btn popovertarget="popovertarget" type="btn2" content="Login" />
+  <PopoverBtn popovertarget="popovertarget" type="btn2" content="Login" />
 </div>
 
 <style>
@@ -23,6 +24,7 @@ import Btn from "./Btn.astro";
     background: rgba(27, 27, 27, 0.91);
     color: var(--color-secondary-01);
     padding: var(--space-2xs);
+    z-index: 30;
 
     a {
       margin-top: auto;
