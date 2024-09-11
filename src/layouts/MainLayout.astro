@@ -46,8 +46,8 @@ const { sitetitle } = Astro.props;
     display: grid;
     --gap: clamp(1rem, 6vw, 3rem);
     --full: minmax(1rem, 1fr);
-    --content: minmax(0.5rem, 65ch);
-    --feature: 100%;
+    --content: minmax(0rem, 65ch);
+    --feature: 0%;
 
     @media (min-width: 900px) {
       --gap: clamp(1rem, 6vw, 3rem);
@@ -62,7 +62,6 @@ const { sitetitle } = Astro.props;
       [feature] var(--feature)
       var(--content) [content-end]
       var(--full) [full-end];
-    align-items: start;
 
     /* .content {
       grid: auto / subgrid;
