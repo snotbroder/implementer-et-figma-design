@@ -181,12 +181,21 @@
 
 body {
   /* Flowspace */
-  .content > * + * {
+  .flow > * + * {
     /* margin-block-start: var(--space-m); */
     margin-block-start: var(--flow-space, var(--space-m));
 
     h2 + h3 {
       --flow-space: var(--space-s);
+    }
+  }
+
+  .flow-light > * + * {
+    /* margin-block-start: var(--space-m); */
+    margin-block-start: var(--flow-space, var(--space-xs));
+
+    h2 + h3 {
+      --flow-space: var(--space-2xs);
     }
   }
   h1,
