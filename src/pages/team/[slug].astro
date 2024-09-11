@@ -19,9 +19,9 @@ console.log(myData);
 <MainLayout sitetitle={myData.name}>
   <section class="content">
     <article class="grid1-2">
-      <div class="imgcontainer">
+      <figure class="imgcontainer">
         <img src={myData.img} alt="" />
-      </div>
+      </figure>
       <div class="txtcontainer flow">
         <div class="lead">
           <div>
@@ -45,11 +45,53 @@ console.log(myData);
 </MainLayout>
 
 <style>
-  img {
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
+  figure {
+    position: relative;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: var(--space-s);
+    }
+
+    /* prikker */
+    &::before {
+      --square-count: 15;
+      --square-size: 1.34rem;
+
+      --_square-size: var(--square-size, 1rem);
+      --_square-half: calc(var(--square-size) / 2);
+      --_square-sum: calc(var(--square-count) * var(--square-size));
+      z-index: -1;
+      content: "";
+      position: absolute;
+      top: -3rem;
+      left: -6rem;
+      /* inset: 0 2rem auto auto; */
+
+      inline-size: calc(round(var(--_square-sum), var(--_square-size)) - var(--_square-half));
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, #be965d, #976f40, #c99b61, #f0be7b, #ffcb85, #eebc79, #c0935b, #976f40) 0 0 / 100% 100%;
+      mask:
+        var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
+        var(--square-pattern) var(--_square-half) var(--_square-half) / var(--_square-size) var(--_square-size);
+    }
+
+    /* grøn boks */
+    &::after {
+      content: "";
+      position: absolute;
+      left: -1.5rem;
+      top: -1.5rem;
+      background: var(--color-primary-02);
+      width: 150px;
+      height: 120px;
+      border-radius: 20px;
+      z-index: -1;
+    }
   }
+
   .lead {
     display: flex;
     gap: var(--space-s);
