@@ -17,14 +17,108 @@ import Btn from "../components/Btn.astro";
 
 <MainLayout sitetitle="Home">
   <div class="hero full ">
-    <div class="herobg full">
-      <div></div>
+    <div class="herobg grid1-1">
+      <div class="box"></div>
       <img src="/public/images/sarah.png" alt="Sarah Jasmine, CEO" />
     </div>
-    <article class="feature herotext">
+    <div class="txtarea grid1-1">
+    <article class="herotext">
       <h1 >Adam Buschemia Business Consultant</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, labore.</p>
+      <p>Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.</p>
+      <Btn type="btn3" link="#contact" content="Book a Meeting" > </Btn>
     </article>
+    <article><h1></h1></article>
+</div>
+    <style>
+      .hero {
+        display: grid;
+        grid-template-columns: subgrid;
+      }
+      .herobg,
+     .txtarea  {
+        grid-area: 1/1;
+      }
+
+      .txtarea{
+        padding-top: var(--space-l);
+        grid-column: content;
+      }
+      .herobg {
+        display: grid;
+        gap: 0;
+        grid-column: full;
+        
+        height: 100%;
+        padding-bottom: var(--space-xl);
+        > :first-child {
+        min-width: auto;  
+        background: var(--color-primary-03);
+        z-index: -10;
+        }
+        @media screen and (min-width: 800px) {
+           .box::before {
+    --square-count: 12;
+    --square-size: 1.34rem;
+    
+    --_square-size: var(--square-size, 1rem);
+    --_square-half: calc(var(--square-size) / 2);
+    --_square-sum: calc(var(--square-count) * var(--square-size));
+    z-index: 1;
+    content: '';
+    position: absolute;
+    top: 12rem;
+    left: -6rem;
+    /* inset: 0 2rem auto auto; */
+ 
+    inline-size: calc( round( var(--_square-sum), var(--_square-size) ) - var(--_square-half) );
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #BE965D, #976F40, #C99B61, #F0BE7B , #FFCB85, #EEBC79, #C0935B, #976F40) 0 0 / 100% 100%;
+    mask:
+      var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
+      var(--square-pattern) var(--_square-half) var(--_square-half) / var(--_square-size) var(--_square-size);
+
+  }
+  /* disabled */
+  box::after {
+    --square-count: 12;
+    --square-size: 1.34rem;
+    
+    --_square-size: var(--square-size, 1rem);
+    --_square-half: calc(var(--square-size) / 2);
+    --_square-sum: calc(var(--square-count) * var(--square-size));
+    z-index: 0;
+    content: '';
+    position: absolute;
+    top: 0rem;
+    left: 44rem;
+    /* inset: 0 2rem auto auto; */
+ 
+    inline-size: calc( round( var(--_square-sum), var(--_square-size) ) - var(--_square-half) );
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #BE965D, #976F40, #C99B61, #F0BE7B , #FFCB85, #EEBC79, #C0935B, #976F40) 0 0 / 100% 100%;
+    mask:
+      var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
+      var(--square-pattern) var(--_square-half) var(--_square-half) / var(--_square-size) var(--_square-size);
+
+  }
+        }
+
+        :nth-child(2) {
+          object-fit: cover;
+          aspect-ratio: 1.5 / 1;
+        }
+      }
+      .herotext {
+        backdrop-filter: blur(4px);
+        > *{
+          margin-bottom: var(--space-m);
+        }
+        p,
+        h1 {
+          color: var(--color-secondary-02);
+        }
+
+    </style>
   </div>
   <section class="sect-1 content">
 <article class="darkcard">
@@ -36,53 +130,15 @@ import Btn from "../components/Btn.astro";
 <article class="darkcard">
   <h5>Our Approach</h5>
 <p>Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.</p>
-<Btn type="btn1" content="More About"></Btn> 
+<Btn type="btn1" event="about" content="More About"></Btn> 
 </article>
 
 <article class="darkcard">
   <h5>Consultalk Result</h5>
 <p>Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.</p>
-<Btn type="btn1" content="Explore Our Solution"></Btn> 
+<Btn type="btn1"  content="Explore Our Solution"></Btn> 
 </article>
   </section>
-
-  <style>
-.sect-1{
-  display: flex;
-
-  gap: var(--space-xs);
-  padding: 0;
-  margin-top: -7rem;
- 
-  article{ 
-    margin-top: 0;
-    padding: var(--space-m);
-     border-radius: 20px;
-    background:rgba(38, 38, 38, 0.90); ;
-    border: var(--color-secondary-03) solid 1px;
-    backdrop-filter: blur(16px);
-    h5,p{
-   color: var(--color-secondary-02);   
-   margin-bottom: var(--space-2xs);
-    }
-    :last-child{
-      margin-top: var(--space-2xs);
-    }
-    
-  }
-
-  @media screen and (max-width: 700px) {
-    margin-top: var(--space-m);
-    flex-direction: column;
-
-    article{
-      width: 25rem;
-      margin: auto;
-    }
-  }
-}
-  </style>
-
 
   <section class="content">
     <div class="sect2-wrapper grid1-1">
@@ -125,7 +181,7 @@ import Btn from "../components/Btn.astro";
 <Values color="black" />
 
 
-  <section class="sect-5">
+  <section id="contact" class="sect-5">
 	<article >
     <Tag color="" tagContent="PROCCESS" />
 <div class="grid1-2">
@@ -163,6 +219,45 @@ import Btn from "../components/Btn.astro";
   </article>
 </section>
 </MainLayout>
+<style>
+  .sect-1{
+    display: flex;
+  
+    gap: var(--space-xs);
+    padding: 0;
+    /* margin-top: -7rem; */
+    margin-top: -10rem;
+   
+    article{ 
+      margin-top: 0;
+      padding: var(--space-m);
+       border-radius: 20px;
+      background:rgba(38, 38, 38, 0.90); ;
+      border: var(--color-secondary-03) solid 1px;
+      backdrop-filter: blur(16px);
+      h5,p{
+     color: var(--color-secondary-02);   
+     margin-bottom: var(--space-s);
+      }
+      
+      :last-child{
+        margin-top: var(--space-2xs);
+
+      }
+      
+    }
+  
+    @media screen and (max-width: 800px) {
+      margin-top: var(--space-m);
+      flex-direction: column;
+  
+      article{
+        width: 25rem;
+        margin: auto;
+      }
+    }
+  }
+    </style>
 <style>
   .sect-3-wrapper{
     display: grid;
@@ -325,36 +420,4 @@ import Btn from "../components/Btn.astro";
 
   }
 </style>
-<style>
-  .hero {
-    /* height: 30rem; */
-    display: grid;
-  }
-  .herobg,
-  .herotext {
-    grid-area: 1/1;
-  }
-  .herobg {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 100%;
-    > :first-child {
-      background: var(--color-primary-03);
-      aspect-ratio: 1.5 / 1;
-    }
-    :nth-child(2) {
-      object-fit: cover;
-      aspect-ratio: 1.5 / 1;
-    }
-  }
-  .herotext {
-    display: subgrid;
-    grid-column: feature;
 
-    p,
-    h1 {
-      color: var(--color-secondary-02);
-    }
-
-
-</style>
