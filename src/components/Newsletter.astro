@@ -27,6 +27,13 @@ import Btn from "./Btn.astro";
     position: relative;
     isolation: isolate;
     padding: var(--space-xl);
+    :first-child {
+      width: 100%;
+    }
+    :last-child {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
 
     .newsletter {
       display: flex;
@@ -76,10 +83,20 @@ import Btn from "./Btn.astro";
     }
   }
 
-  @container newsletter-size (width < 700px) {
+  @container newsletter-size (width < 600px) {
     .newsletter {
       flex-direction: column;
       gap: 0rem;
+      .input-wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  @container newsletter-size (width < 800px) {
+    .newsletter {
+      justify-content: space-between;
       .input-wrapper {
         display: flex;
         flex-direction: column;
@@ -94,7 +111,8 @@ import Btn from "./Btn.astro";
   .input-wrapper {
     display: flex;
     gap: var(--space-s);
-    justify-content: space-between;
+
+    width: 100%;
 
     input {
       margin-top: auto;
