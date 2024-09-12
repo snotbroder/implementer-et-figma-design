@@ -13,8 +13,107 @@ import PopoverBtn from "./PopoverBtn.astro";
     <li><a href="/about">About</a></li>
   </ul>
 
-  <PopoverBtn popovertarget="popovertarget" type="btn2" content="Login" />
+  <div class="enditems">
+    <input type="checkbox" id="menyAvPaa" />
+    <label id="burger" for="menyAvPaa">
+      <div></div>
+      <div></div>
+      <div></div>
+    </label>
+    <nav id="meny">
+      <a href="/">Home</a>
+      <a href="/case">Case Study</a>
+      <a href="/team">Team</a>
+      <a href="/about">About</a>
+    </nav>
+
+    <PopoverBtn popovertarget="popovertarget" type="btn2" content="Login" />
+  </div>
 </header>
+
+<style>
+  #meny {
+    background: #333;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 1000%;
+    transition-timing-function: cubic-bezier(10, 2, 3, 1);
+    transform: translateX(50rem);
+    top: 0;
+    z-index: 0;
+    transition: 0.5s;
+  }
+  #menyAvPaa {
+    display: none;
+  }
+
+  #menyAvPaa:checked ~ #meny {
+    transform: translateX(0rem);
+  }
+
+  #meny {
+    opacity: 0;
+  }
+
+  #burger {
+    position: relative;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    left: auto;
+    top: auto;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-2xs);
+    flex-direction: column;
+    opacity: 0;
+  }
+
+  #burger > div {
+    height: 3px;
+    background-color: var(--color-secondary-02);
+    transition: 0.5s;
+    z-index: 999;
+  }
+
+  #menyAvPaa:checked ~ #burger > div {
+    background-color: #fff;
+  }
+
+  #menyAvPaa:checked ~ #burger > div:nth-child(1) {
+    transform: translateY(12px) rotate(45deg);
+  }
+  #menyAvPaa:checked ~ #burger > div:nth-child(2) {
+    opacity: 0;
+  }
+  #menyAvPaa:checked ~ #burger > div:nth-child(3) {
+    transform: translateY(-15px) rotate(-45deg);
+  }
+
+  @media (width < 800px) {
+    #burger {
+      opacity: 1;
+    }
+    ul {
+      display: none;
+    }
+    #meny {
+      opacity: 1;
+      display: flex;
+      flex-direction: column;
+      padding-left: var(--space-l);
+      left: 0;
+    }
+  }
+
+  .enditems {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-s);
+  }
+</style>
 
 <style>
   .menu {
@@ -43,20 +142,22 @@ import PopoverBtn from "./PopoverBtn.astro";
       margin-top: auto;
       margin-bottom: auto;
     }
-    a {
-      color: var(--color-secondary-02);
-      text-decoration: none;
-      transition: var(--hoverdefault);
-      &:hover {
-        color: var(--color-primary-01);
-        transition: var(--hovertrans);
-      }
-    }
-    @media (width < 600px) {
+
+    @media (width < 800px) {
       justify-content: space-between;
       ul {
         display: none;
       }
+    }
+  }
+
+  a {
+    color: var(--color-secondary-02);
+    text-decoration: none;
+    transition: var(--hoverdefault);
+    &:hover {
+      color: var(--color-primary-01);
+      transition: var(--hovertrans);
     }
   }
 </style>
