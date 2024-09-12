@@ -6,33 +6,46 @@ const { tagContent, headline, img } = Astro.props;
 
 <div class="head-wrapper full">
   <div class="container">
-    <img src={img} alt="" />
+    <img class="full" src={img} alt="" />
 
-    <div class="txtcontainer">
+    <div class="txtcontainer content">
       <Tag tagContent={tagContent} />
       <h1>{headline}</h1>
     </div>
   </div>
 </div>
 <style>
+  .head-wrapper {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: full;
+  }
+
+  .container {
+    place-items: center left;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: full;
+  }
+  img {
+    object-fit: cover;
+    min-height: 20rem;
+  }
+  img,
+  .txtcontainer {
+    grid-area: 1/1;
+  }
   .txtcontainer {
     background: var(--color-secondary-01-70);
     padding: var(--space-l);
     border-radius: 20px;
-    margin-left: var(--space-3xl);
+
     backdrop-filter: blur(4px);
+    grid-column: content;
 
     :last-child {
       margin-top: var(--space-s);
       max-width: 20ch;
     }
-  }
-  .container {
-    place-items: center left;
-    display: grid;
-  }
-  img,
-  .txtcontainer {
-    grid-area: 1/1;
   }
 </style>
