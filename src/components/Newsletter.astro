@@ -26,12 +26,12 @@ import Btn from "./Btn.astro";
     overflow: clip;
     position: relative;
     isolation: isolate;
+    padding: var(--space-xl);
 
     .newsletter {
       display: flex;
       gap: var(--space-2xl);
 
-      padding: 2rem;
       h4,
       p {
         color: var(--color-secondary-02);
@@ -95,5 +95,11 @@ import Btn from "./Btn.astro";
     display: flex;
     gap: var(--space-s);
     justify-content: space-between;
+
+    input {
+      margin-top: auto;
+      margin-bottom: auto;
+      padding: var(--space-s);
+    }
   }
 </style>
