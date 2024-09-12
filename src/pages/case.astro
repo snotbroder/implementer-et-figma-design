@@ -6,8 +6,8 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 <MainLayout sitetitle="Home">
   <HeadComponent tagContent="CASE STUDIES SINGLE" headline="Taxes & Efficiency" img="/public/images/case.png" />
-  <div class="casedata content">
-    <img src="/public/images/computer.png" alt="computer seen from above with code on screen" />
+  <article class="content casedata">
+    <img class="content" src="/public/images/computer.png" alt="computer seen from above with code on screen" />
     <div class="datacontainer">
       <ul class="data">
         <li><h5>Case Name</h5></li>
@@ -23,8 +23,8 @@ import MainLayout from "../layouts/MainLayout.astro";
       </ul>
       <Btn type="btn2" content="Live Preview" />
     </div>
-  </div>
-  <section class="content">
+  </article>
+  <section class="content flow">
     <h2>Project Overview</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
     <ul>
@@ -36,14 +36,25 @@ import MainLayout from "../layouts/MainLayout.astro";
     <h4>Storyboard</h4>
     <p>Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service. Objectively innovate empowered manufactured products whereas parallel platforms. Holistically predominate extensible testing procedures for reliable supply chains.</p>
     <p>Proactively envisioned multimedia based expertise and cross-media growth strategies. Seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing. Holistically pontificate installed base portals after maintainable products completely pursue scalable customer service.</p>
-    <img class="feature" src="/public/images/help.png" alt="Girl getting help using a computer" />
+    <img class="" src="/public/images/help.png" alt="Girl getting help using a computer" />
     <h4>Project result</h4>
     <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
     <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
   </section>
 </MainLayout>
 <style>
+  section {
+    padding-top: var(--space-xl);
+    img {
+      margin-right: var(--space-m);
+      margin-left: var(--space-m);
+      object-fit: cover;
+      width: 90%;
+    }
+  }
+
   .casedata {
+    margin-top: var(--space-2xl);
     img {
       border-radius: 20px;
       z-index: -10;
@@ -51,13 +62,17 @@ import MainLayout from "../layouts/MainLayout.astro";
     }
   }
   .datacontainer {
-    margin: -2rem;
+    margin-top: -2rem;
 
     background: var(--color-primary-03);
     display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-m);
     justify-content: space-between;
     padding: var(--space-l);
     border-radius: 20px;
+    margin-left: var(--space-m);
+    margin-right: var(--space-m);
 
     :last-child {
       margin-top: auto;
