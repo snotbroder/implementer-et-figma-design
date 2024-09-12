@@ -45,11 +45,21 @@ import MainLayout from "../layouts/MainLayout.astro";
 <style>
   section {
     padding-top: var(--space-xl);
+    padding-right: var(--space-2xl);
+    padding-left: var(--space-2xl);
+
     img {
-      margin-right: var(--space-m);
-      margin-left: var(--space-m);
+      margin-right: var(--space-l);
+      margin-left: var(--space-l);
       object-fit: cover;
       width: 90%;
+    }
+  }
+
+  section {
+    @media (width < 800px) {
+      padding-right: var(--space-s);
+      padding-left: var(--space-s);
     }
   }
 
