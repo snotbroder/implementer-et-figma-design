@@ -82,6 +82,10 @@ import Btn from "./Btn.astro";
       z-index: -1;
     }
   }
+  .newsletter-wrapper {
+    container-type: inline-size;
+    container-name: newsletter-size;
+  }
 
   @container newsletter-size (width < 600px) {
     .newsletter {
@@ -104,10 +108,6 @@ import Btn from "./Btn.astro";
     }
   }
 
-  .newsletter-wrapper {
-    container-type: inline-size;
-    container-name: newsletter-size;
-  }
   .input-wrapper {
     display: flex;
     gap: var(--space-s);
